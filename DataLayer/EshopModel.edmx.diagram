@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="89b314ba00ee45439371fbd0db5e2553" Name="Diagram1">
+        <EntityTypeShape EntityType="MyEshop_DBModel.Roles" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyEshop_DBModel.Users" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="MyEshop_DBModel.FK_Users_Roles" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="MyEshop_DBModel.Product_Groups" Width="1.5" PointX="6.25" PointY="1.5" />
+        <AssociationConnector Association="MyEshop_DBModel.FK_Product_Groups_Product_Groups" />
+        <EntityTypeShape EntityType="MyEshop_DBModel.Product_Galleries" Width="1.5" PointX="3" PointY="11.75" />
+        <EntityTypeShape EntityType="MyEshop_DBModel.Products" Width="1.5" PointX="0.75" PointY="7.25" />
+        <EntityTypeShape EntityType="MyEshop_DBModel.SelectedProductGroup" Width="1.5" PointX="8.875" PointY="4.875" />
+        <EntityTypeShape EntityType="MyEshop_DBModel.Tags" Width="1.5" PointX="3" PointY="9.25" />
+        <AssociationConnector Association="MyEshop_DBModel.FK_Product_Galleries_Products" />
+        <AssociationConnector Association="MyEshop_DBModel.FK_SelectedProductGroup_Product_Groups" />
+        <AssociationConnector Association="MyEshop_DBModel.FK_SelectedProductGroup_Products" />
+        <AssociationConnector Association="MyEshop_DBModel.FK_Tags_Products" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,68 @@
+﻿@model IEnumerable<DataLayer.Products>
+
+@{
+    ViewBag.Title = "لیست محصولات";
+}
+
+<h2>لیست محصولات</h2>
+
+<p>
+  <a href="@Url.Action("Create")" class="btn btn-primary">افزودن محصول</a>
+</p>
+<table class="table table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ImageName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductTitle)
+        </th>
+        <th>
+            گروه های محصول
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.CreateDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+      <img class="thumbnail" src="~/Images/ProductImages/Thumb/@item.ImageName">
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ProductTitle)
+    </td>
+    <td>
+@if (item.SelectedProductGroup.Any()) {
+        <ol>
+            @foreach (var groups in item.SelectedProductGroup)
+            {
+                <li>@groups.Product_Groups.GroupTitle</li>
+
+            }
+        </ol>
+}
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Price)
+    </td>
+    <td>
+      @item.CreateDate.ToString("dddd, dd MMMM yyyy")
+    </td>
+    <td>
+      <a class="btn btn-default btn-xs" href="#">ویژگی های محصول</a> 
+     <a class="btn btn-info btn-xs">گالری تصاویر محصول</a> 
+        <a class="btn btn-warning btn-xs" href="@Url.Action("Edit",new{id=item.ProductID })">ویرایش محصول</a>
+        <a class="btn btn-danger btn-xs" href="@Url.Action("Delete",new {id=item.ProductID })">حذف محصول</a>
+        
+    </td>
+</tr>
+}
+
+</table>

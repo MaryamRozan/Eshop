@@ -1,0 +1,15 @@
+﻿@model DataLayer.Users
+@{
+    ViewBag.Title = "ثبت نام";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="alert alert-success">
+    <h2>
+        @Model.UserName عزیز ثبت نام شما با موفقیت انجام شد
+    </h2>
+    <p>
+        ایمیلی حاوی لینک فعالسازی به ایمیل @Model.Email ارسال گردید. لطفا برای تکمیل ثبت نام، روی لینک ارسال شده کلیک فرمایید.
+    </p>
+</div> 
+
