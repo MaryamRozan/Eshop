@@ -14,6 +14,7 @@ namespace MyEshop.Controllers
         public ActionResult ShowProductGroups()
         {
             return PartialView(db.ProductGroupRepository.GetAll());
+
         }
     }
 }
