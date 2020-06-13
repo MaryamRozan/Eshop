@@ -111,6 +111,9 @@ namespace MyEshop.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Groups = db.ProductGroupRepository.GetAll();
+            ViewBag.SelectedGroups = products.SelectedProductGroup.ToList();
+            ViewBag.Tags = string.Join("،", products.Tags.Select(t => t.Tag));
             return View(products);
         }
 
@@ -119,14 +122,55 @@ namespace MyEshop.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ProductID,ProductTitle,ShortDescription,Text,Price,ImageName,CreateDate")] Products products)
+        public ActionResult Edit([Bind(Include = "ProductID,ProductTitle,ShortDescription,Text,Price,ImageName,CreateDate")] Products products, List<int> SelectedGroups, HttpPostedFileBase imageProduct, string tags)
         {
             if (ModelState.IsValid)
             {
+                if (imageProduct != null && imageProduct.IsImage()) {
+                    if (products.ImageName != "no-image.png") {
+                        System.IO.File.Delete(Server.MapPath("~/Images/ProductImages/" + products.ImageName));
+                        System.IO.File.Delete(Server.MapPath("~/Images/ProductImages/Thumb/"+products.ImageName));
+                    }
+                    products.ImageName = Guid.NewGuid().ToString()+Path.GetExtension(imageProduct.FileName);
+                  
+                    imageProduct.SaveAs(Server.MapPath("/Images/ProductImages/" + products.ImageName));
+                    ImageResizer image = new ImageResizer();
+                    image.Resize(Server.MapPath("/Images/ProductImages/" + products.ImageName), Server.MapPath("/Images/ProductImages/Thumb/" + products.ImageName));
+                }
                 db.ProductRepository.Update(products);
+
+               List<Tags> tag= db.TagsRepository.GetAll(t=> t.ProductID==products.ProductID).ToList();
+                foreach(var t in tag) { db.TagsRepository.Delete(t); }
+                if (!string.IsNullOrEmpty(tags)) {
+                    string[] Tags = tags.Split('،');
+                    foreach (var T in Tags) {
+                        db.TagsRepository.Insert(new Tags()
+                        {
+                            ProductID = products.ProductID,
+                            Tag = T.Trim()
+                        }) ;
+                    }
+                }
+
+                List<SelectedProductGroup> selectedGroup = db.SelectedGroupRepository.GetAll(s=> s.ProductID==products.ProductID).ToList();
+                foreach (var g in selectedGroup) {
+                    db.SelectedGroupRepository.Delete(g);
+                }
+
+                foreach(var s in SelectedGroups)
+                {
+                    db.SelectedGroupRepository.Insert(new SelectedProductGroup() {
+                    ProductID=products.ProductID,
+                    GroupID=s
+                    });
+                }
+
                 db.Save();
                 return RedirectToAction("Index");
             }
+            ViewBag.Groups = db.ProductGroupRepository.GetAll();
+            ViewBag.SelectedGroups = products.SelectedProductGroup.ToList();
+            ViewBag.Tags = string.Join("،", products.Tags.Select(t => t.Tag));
             return View(products);
         }
 
