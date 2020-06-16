@@ -88,6 +88,19 @@ namespace DataLayer
                 return _tagsRepository;
             }
         }
+
+        IGenericRepository<Product_Galleries> _galleryRepository;
+        public IGenericRepository<Product_Galleries> GalleryRepository
+        {
+            get
+            {
+                if (_galleryRepository == null)
+                {
+                    _galleryRepository = new GenericRepository<Product_Galleries>(db);
+                }
+                return _galleryRepository;
+            }
+        }
         public void Dispose()
         {
             db.Dispose();

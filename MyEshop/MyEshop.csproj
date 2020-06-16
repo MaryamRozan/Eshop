@@ -1314,6 +1314,7 @@
     <Content Include="ckeditor\_samples\adobeair\run.bat" />
     <Content Include="ckeditor\_samples\adobeair\run.sh" />
     <Content Include="ckeditor\_samples\assets\output_for_flash.fla" />
+    <Content Include="Areas\Admin\Views\Products\Gallery.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -1354,6 +1355,7 @@
     <Compile Include="Utilities\CheckContentImage.cs" />
     <Compile Include="Utilities\DateConvertor.cs" />
     <Compile Include="Utilities\ImageResizer.cs" />
+    <Compile Include="Utilities\ImageUploader.cs" />
     <Compile Include="Utilities\MyEshopRoleProvider.cs" />
     <Compile Include="Utilities\PartialToStringClass.cs" />
     <Compile Include="Utilities\PersianCulture.cs" />
