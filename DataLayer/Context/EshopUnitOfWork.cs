@@ -38,8 +38,10 @@ namespace DataLayer
         }
 
         IUsersRepository _userrRepository;
-        public IUsersRepository UserRepository {
-            get {
+        public IUsersRepository UserRepository
+        {
+            get
+            {
                 if (_userrRepository == null)
                 {
                     _userrRepository = new UserRepository(db);
@@ -49,10 +51,13 @@ namespace DataLayer
         }
 
         IGenericRepository<Product_Groups> _productGroupRepository;
-        public IGenericRepository<Product_Groups> ProductGroupRepository {
-            get {
-                if (_productGroupRepository == null) {
-                    _productGroupRepository = new GenericRepository<Product_Groups>(db);  
+        public IGenericRepository<Product_Groups> ProductGroupRepository
+        {
+            get
+            {
+                if (_productGroupRepository == null)
+                {
+                    _productGroupRepository = new GenericRepository<Product_Groups>(db);
                 }
                 return _productGroupRepository;
             }
@@ -60,9 +65,12 @@ namespace DataLayer
 
 
         IGenericRepository<Products> _productRepository;
-        public IGenericRepository<Products> ProductRepository {
-            get {
-                if (_productGroupRepository == null) {
+        public IGenericRepository<Products> ProductRepository
+        {
+            get
+            {
+                if (_productGroupRepository == null)
+                {
                     _productRepository = new GenericRepository<Products>(db);
                 }
                 return _productRepository;
@@ -70,9 +78,12 @@ namespace DataLayer
         }
 
         IGenericRepository<SelectedProductGroup> _selectedGroupRepository;
-        public IGenericRepository<SelectedProductGroup> SelectedGroupRepository {
-            get {
-                if (_selectedGroupRepository == null) {
+        public IGenericRepository<SelectedProductGroup> SelectedGroupRepository
+        {
+            get
+            {
+                if (_selectedGroupRepository == null)
+                {
                     _selectedGroupRepository = new GenericRepository<SelectedProductGroup>(db);
                 }
                 return _selectedGroupRepository;
@@ -80,11 +91,14 @@ namespace DataLayer
         }
 
         IGenericRepository<Tags> _tagsRepository;
-        public IGenericRepository<Tags> TagsRepository {
-            get {
-                if (_tagsRepository == null) {
+        public IGenericRepository<Tags> TagsRepository
+        {
+            get
+            {
+                if (_tagsRepository == null)
+                {
                     _tagsRepository = new GenericRepository<Tags>(db);
-                 }
+                }
                 return _tagsRepository;
             }
         }
@@ -101,12 +115,40 @@ namespace DataLayer
                 return _galleryRepository;
             }
         }
+
+        IGenericRepository<Features> _featureRepository;
+        public IGenericRepository<Features> FeatureRepository
+        {
+            get
+            {
+                if (_featureRepository == null)
+                {
+                    _featureRepository = new GenericRepository<Features>(db);
+                }
+                return _featureRepository;
+            }
+        }
+
+        IGenericRepository<Product_Features> _productFeaturesRepository;
+        public IGenericRepository<Product_Features> ProductFeaturesRepository
+        {
+            get
+            {
+                if (_productFeaturesRepository == null)
+                {
+                    _productFeaturesRepository = new GenericRepository<Product_Features>(db);
+                }
+                return _productFeaturesRepository;
+            }
+        }
+
         public void Dispose()
         {
             db.Dispose();
         }
 
-        public void Save() {
+        public void Save()
+        {
             db.SaveChanges();
         }
     }

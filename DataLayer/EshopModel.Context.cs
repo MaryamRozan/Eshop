@@ -32,5 +32,7 @@ namespace DataLayer
         public virtual DbSet<Products> Products { get; set; }
         public virtual DbSet<SelectedProductGroup> SelectedProductGroup { get; set; }
         public virtual DbSet<Tags> Tags { get; set; }
+        public virtual DbSet<Features> Features { get; set; }
+        public virtual DbSet<Product_Features> Product_Features { get; set; }
     }
 }
