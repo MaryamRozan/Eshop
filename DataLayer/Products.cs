@@ -32,6 +32,7 @@ namespace DataLayer
         public int Price { get; set; }
         public string ImageName { get; set; }
         public System.DateTime CreateDate { get; set; }
+        public int Sold { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Product_Galleries> Product_Galleries { get; set; }
