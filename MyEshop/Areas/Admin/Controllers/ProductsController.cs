@@ -156,13 +156,14 @@ namespace MyEshop.Areas.Admin.Controllers
                 foreach (var g in selectedGroup) {
                     db.SelectedGroupRepository.Delete(g);
                 }
-
+                if(SelectedGroups != null && SelectedGroups.Any()) { 
                 foreach(var s in SelectedGroups)
                 {
                     db.SelectedGroupRepository.Insert(new SelectedProductGroup() {
                     ProductID=products.ProductID,
                     GroupID=s
                     });
+                }
                 }
 
                 db.Save();
