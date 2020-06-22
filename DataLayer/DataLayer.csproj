@@ -91,6 +91,7 @@
       <DependentUpon>EshopModel.tt</DependentUpon>
     </Compile>
     <Compile Include="MetaDataClasses\FeaturesMetaData.cs" />
+    <Compile Include="MoreLinq\MoreEnumerable.DistinctBy.cs" />
     <Compile Include="Products.cs">
       <DependentUpon>EshopModel.tt</DependentUpon>
     </Compile>
@@ -129,6 +130,7 @@
     </Compile>
     <Compile Include="MetaDataClasses\UsersMetaData.cs" />
     <Compile Include="ViewModels\AccountViewModel.cs" />
+    <Compile Include="ViewModels\ProductViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="EshopModel.edmx">

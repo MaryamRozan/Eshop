@@ -49,6 +49,7 @@
           <Property Name="Price" Type="int" Nullable="false" />
           <Property Name="ImageName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="Sold" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Roles">
           <Key>
@@ -356,6 +357,7 @@
           <NavigationProperty Name="SelectedProductGroup" Relationship="MyEshop_DBModel.FK_SelectedProductGroup_Products" FromRole="Products" ToRole="SelectedProductGroup" />
           <NavigationProperty Name="Tags" Relationship="MyEshop_DBModel.FK_Tags_Products" FromRole="Products" ToRole="Tags" />
           <NavigationProperty Name="Product_Features" Relationship="MyEshop_DBModel.FK_Product_Features_Products" FromRole="Products" ToRole="Product_Features" />
+          <Property Name="Sold" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="SelectedProductGroup">
           <Key>
@@ -518,6 +520,7 @@
           <EntitySetMapping Name="Products">
             <EntityTypeMapping TypeName="MyEshop_DBModel.Products">
               <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="Sold" ColumnName="Sold" />
                 <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
                 <ScalarProperty Name="ImageName" ColumnName="ImageName" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
