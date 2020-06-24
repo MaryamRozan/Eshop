@@ -25,7 +25,7 @@
                 <!-- Clientarea and Basket -->
                 <div class="clientarea">
                     <ul>
-                       @Html.Partial("_LoggedInUser")
+                        @Html.Partial("_LoggedInUser")
                         <li><a href=""><i class="fa fa-shopping-bag"></i> سبد خرید <span>10</span></a></li>
                     </ul>
                 </div>
@@ -147,7 +147,7 @@
             </section>
             <!-- End compare -->
             <!-- Category -->
-         @Html.Action("ShowProductGroups","Product",new {area="" })
+            @Html.Action("ShowProductGroups", "Product", new { area = "" })
             <!-- End Category -->
             <!-- Category -->
             <!-- End Category -->
@@ -234,5 +234,7 @@
     <script src="/Content/js/script.js"></script>
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+
 </body>
 </html>

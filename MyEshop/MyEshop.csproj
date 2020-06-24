@@ -1455,6 +1455,10 @@
     <Content Include="Views\Product\LastProduct.cshtml" />
     <Content Include="Views\Product\BestSellingproducts.cshtml" />
     <Content Include="Views\Product\ShowProductDetail.cshtml" />
+    <Content Include="Views\Product\ShowComment.cshtml" />
+    <Content Include="Views\Product\CreateComment.cshtml" />
+    <Content Include="Views\Product\ShowComments.cshtml" />
+    <Content Include="Views\Product\CreateComments.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Http.ModelBinding;
 using System.Web.Mvc;
 
 namespace MyEshop.Controllers
@@ -44,6 +45,42 @@ namespace MyEshop.Controllers
            
             return View(products);
         }
+
+
+        public ActionResult ShowComments(int id) {
+            return PartialView(db.CommentRepository.GetAll(c=> c.ProductID==id));
+        }
+
+        
+
+        public ActionResult CreateComments(int id) {
+
+            return PartialView(new Product_Comment() {
+            ProductID=id
+            });
+
+        }
+
+
+
+
+        [HttpPost]
+        public ActionResult CreateComment(Product_Comment productComment)
+        {
+            if (ModelState.IsValid)
+            {
+                productComment.CreateDate = DateTime.Now;
+                db.CommentRepository.Insert(productComment);
+                db.Save();
+
+                return PartialView("ShowComments", db.CommentRepository.GetAll(c => c.ProductID == productComment.ProductID));
+
+            }
+            return RedirectToAction("Index");
+        }
+
     }
 
 }
+
+

@@ -142,6 +142,16 @@ namespace DataLayer
             }
         }
 
+        IGenericRepository<Product_Comment> _commentRepository;
+        public IGenericRepository<Product_Comment> CommentRepository {
+            get {
+                if (_commentRepository == null) {
+                    _commentRepository = new GenericRepository<Product_Comment>(db);
+                }
+                return _commentRepository;
+            }
+        }
+
         public void Dispose()
         {
             db.Dispose();
