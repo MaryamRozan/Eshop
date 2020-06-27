@@ -79,7 +79,7 @@
             <!-- End Chart -->
             <!-- Comment -->
             <div id="comments" class="tab-pane fade">
-                <div class="comment-layer">
+                <div class="comment-layer"  id="Rcomment">
                     @Html.Action("CreateComments")
                     <ul class="comment-list" id="listComment">
                         @Html.Action("ShowComments")
@@ -109,5 +109,13 @@
         $("#Email").val("");
         $("#WebSite").val("");
         $("#Comment").val("");
+        $("ParentID").val("");
     }
+
+    function ReplyComment(id) {
+        $("#ParentID").val(id);
+        $("html, body").delay(1000).animate({ scrollTop: $('#Rcomment').offset().top }, 1000);
+    }
+
+
 </script>

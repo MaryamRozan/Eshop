@@ -76,7 +76,7 @@ namespace MyEshop.Controllers
                 return PartialView("ShowComments", db.CommentRepository.GetAll(c => c.ProductID == productComment.ProductID));
 
             }
-            return RedirectToAction("Index");
+            return PartialView(productComment);
         }
 
     }
