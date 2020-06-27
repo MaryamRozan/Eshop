@@ -1263,6 +1263,7 @@
     <Content Include="Content\css\font-awesome.min.css" />
     <Content Include="Content\css\owl.carousel.css" />
     <Content Include="Content\css\style.css" />
+    <Content Include="Content\CustomStyle.css" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\fonts\yekannumbers.svg" />
     <Content Include="Content\fonts\yekanweb.svg" />
@@ -1455,8 +1456,6 @@
     <Content Include="Views\Product\LastProduct.cshtml" />
     <Content Include="Views\Product\BestSellingproducts.cshtml" />
     <Content Include="Views\Product\ShowProductDetail.cshtml" />
-    <Content Include="Views\Product\ShowComment.cshtml" />
-    <Content Include="Views\Product\CreateComment.cshtml" />
     <Content Include="Views\Product\ShowComments.cshtml" />
     <Content Include="Views\Product\CreateComments.cshtml" />
     <None Include="Web.Debug.config">

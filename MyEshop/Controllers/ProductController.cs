@@ -65,7 +65,7 @@ namespace MyEshop.Controllers
 
 
         [HttpPost]
-        public ActionResult CreateComment(Product_Comment productComment)
+        public ActionResult CreateComments(Product_Comment productComment)
         {
             if (ModelState.IsValid)
             {
