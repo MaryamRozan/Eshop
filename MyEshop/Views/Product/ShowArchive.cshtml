@@ -1,0 +1,64 @@
+﻿@model IEnumerable<DataLayer.Products>
+@{
+    ViewBag.Title = "آرشیو محصولات";
+}
+
+@section Filter{
+    <section class="border-radius">
+        <header><h3> فیلتر  </h3></header>
+        <article class="filter">
+
+            <form>
+                <p>عنوان</p>
+                <input type="text" name="Title" class="form-control" />
+                <p>قیمت از</p>
+                <input type="number" name="minPrice" class="form-control" />
+                <p>قیمت تا</p>
+                <input type="number" name="maxPrice" class="form-control" />
+
+                @{
+                    List<DataLayer.Product_Groups> list = ViewBag.Groups;
+
+                }
+                <p>گروه ها</p>
+                <ul class="category-side">
+                    @foreach (var group in list.Where(g => g.ParenID == null))
+                    {
+                        <li>
+                            <input type="checkbox" name="selectedGroups" value="@group.GroupID" />
+                            <span>@group.GroupTitle</span>
+                            @if (list.Any(g => g.ParenID == group.GroupID))
+                            {
+                                <ul>
+                                    @foreach (var subGroup in list.Where(g => g.ParenID == group.GroupID))
+                                    {
+                                        <li>
+                                            <input type="checkbox" name="selectedGroups" value="@subGroup.GroupID" />
+                                            <span>@subGroup.GroupTitle</span>
+                                        </li>
+                                    }
+                                </ul>
+                            }
+                        </li>
+                    }
+                </ul>
+                <input type="submit" class="btn btn-block form-control" value="اعمال" />
+            </form>
+        </article>
+    </section>
+
+
+}
+
+<section class="last-products">
+    <header><h3> آرشیو محصولات </h3></header>
+    <article>
+
+        @foreach (var item in Model)
+        {
+            @Html.Partial("_product", item)
+        }
+
+        <div class="clearfix"></div>
+    </article>
+</section>

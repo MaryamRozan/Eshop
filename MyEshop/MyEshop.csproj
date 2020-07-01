@@ -1460,6 +1460,7 @@
     <Content Include="Views\Product\ShowComments.cshtml" />
     <Content Include="Views\Product\CreateComments.cshtml" />
     <Content Include="Views\Search\Index.cshtml" />
+    <Content Include="Views\Product\ShowArchive.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
