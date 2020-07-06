@@ -81,7 +81,7 @@ namespace MyEshop.Controllers
         }
 
         [Route("Archive")]
-        public ActionResult ArchiveProduct(int pageId = 1, string title = "", int minPrice = 0, int maxPrice = 0, List<int> selectedGroups = null)
+        public ActionResult ShowArchive(int pageId = 1, string title = "", int minPrice = 0, int maxPrice = 0, List<int> selectedGroups = null)
         {
             ViewBag.Groups = db.ProductGroupRepository.GetAll().ToList();
             ViewBag.productTitle = title;
@@ -100,7 +100,8 @@ namespace MyEshop.Controllers
             }
             else
             {
-                list.AddRange(db.ProductRepository.GetAll().ToList());
+                list.AddRange(db.SelectedGroupRepository.GetAll().Select(p=>p.Products).ToList());
+                list = list.Distinct().ToList();
             }
 
 
@@ -119,9 +120,9 @@ namespace MyEshop.Controllers
 
             //Pagging
             int take = 9;
-            int skip = (pageId - 1) * take;
-            ViewBag.PageCount = list.Count() / take;
-            return View(list.OrderByDescending(p => p.CreateDate).Skip(skip).Take(take).ToList());
+            int skip = (pageId - 1) * 1;
+            ViewBag.pageCount = list.Count()/take;
+            return View(list.OrderByDescending(p=>p.CreateDate).Skip(skip).Take(take).ToList());
         }
     }
 

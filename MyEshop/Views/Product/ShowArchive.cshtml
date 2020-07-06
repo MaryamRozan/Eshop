@@ -8,16 +8,18 @@
         <header><h3> فیلتر  </h3></header>
         <article class="filter">
 
-            <form>
+            <form action="/Archive" id="changepage">
+                <input type="hidden" name="pageId" value="@ViewBag.pageId" id="pageId" />
                 <p>عنوان</p>
-                <input type="text" name="Title" class="form-control" />
+                <input type="text" name="Title" class="form-control" value="@ViewBag.productTitle"/>
                 <p>قیمت از</p>
-                <input type="number" name="minPrice" class="form-control" />
+                <input type="number" name="minPrice" class="form-control" value="@ViewBag.minPrice" />
                 <p>قیمت تا</p>
-                <input type="number" name="maxPrice" class="form-control" />
+                <input type="number" name="maxPrice" class="form-control" value="@ViewBag.maxPrice" />
 
                 @{
                     List<DataLayer.Product_Groups> list = ViewBag.Groups;
+                    List<int> selected = ViewBag.selectGroup ?? new List<int>();
 
                 }
                 <p>گروه ها</p>
@@ -25,7 +27,7 @@
                     @foreach (var group in list.Where(g => g.ParenID == null))
                     {
                         <li>
-                            <input type="checkbox" name="selectedGroups" value="@group.GroupID" />
+                            <input type="checkbox" name="selectedGroups" @((selected.Any(s=>s==group.GroupID))?"checked":"") value="@group.GroupID" />
                             <span>@group.GroupTitle</span>
                             @if (list.Any(g => g.ParenID == group.GroupID))
                             {
@@ -33,7 +35,7 @@
                                     @foreach (var subGroup in list.Where(g => g.ParenID == group.GroupID))
                                     {
                                         <li>
-                                            <input type="checkbox" name="selectedGroups" value="@subGroup.GroupID" />
+                                            <input type="checkbox" name="selectedGroups" @((selected.Any(s=>s==subGroup.GroupID))?"checked":"") value="@subGroup.GroupID" />
                                             <span>@subGroup.GroupTitle</span>
                                         </li>
                                     }
@@ -56,9 +58,30 @@
 
         @foreach (var item in Model)
         {
-            @Html.Partial("_product", item)
+            <div class="col-md-4 col-sm-6">
+                @Html.Partial("_product", item)
+            </div>
         }
+
 
         <div class="clearfix"></div>
     </article>
 </section>
+@if (ViewBag.pageCount > 1) {
+<div class="pagination-layer">
+    <ul class="pagination">
+        @for (int i = 1; i <= ViewBag.pageCount; i++)
+        {
+            <li><a onclick="ChangePage(@i)">@i</a></li>
+        }
+
+    </ul>
+</div>
+}
+
+<script>
+    function ChangePage(pageid) {
+        $("#pageId").val(pageid);
+        $("#changepage").submit();
+    }
+</script>
