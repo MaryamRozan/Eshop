@@ -1274,6 +1274,7 @@
     <Content Include="Content\img\img.jpg" />
     <Content Include="Content\img\logo.png" />
     <Content Include="Content\img\phone.png" />
+    <Content Include="Content\js\ShopCart.js" />
     <Content Include="Images\ProductImages\no-image.png" />
     <Content Include="Content\img\shop.png" />
     <Content Include="Content\img\slider.jpg" />
@@ -1421,6 +1422,8 @@
     <Compile Include="Controllers\ManageEmailController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\ShopCartController.cs" />
+    <Compile Include="Controllers\ShopController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1461,6 +1464,7 @@
     <Content Include="Views\Product\CreateComments.cshtml" />
     <Content Include="Views\Search\Index.cshtml" />
     <Content Include="Views\Product\ShowArchive.cshtml" />
+    <Content Include="Views\Shop\ShowBasket.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
