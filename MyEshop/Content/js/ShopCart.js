@@ -1,6 +1,6 @@
 ﻿
-    $(function () {
-        ShowShopCart();
+$(function () {
+    ShowShopCart();
     });
 
     function ShowShopCart() {
@@ -18,3 +18,14 @@ function AddToshopCart(id) {
 function UpdateShopCart() {
     $("#Basket").load("/Shop/ShowBasket/").fadeOut(500).fadeIn(500);
 }
+
+function commandOrder(id, count) {
+    $.ajax({
+        url: "/Shop/CommandOrder/" + id,
+        type: "Get",
+        data: { count: count }
+    }).done(function (res) {
+        $("#ShowOrder").html(res);
+    });
+}
+

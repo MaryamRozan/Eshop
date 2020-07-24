@@ -1465,6 +1465,8 @@
     <Content Include="Views\Search\Index.cshtml" />
     <Content Include="Views\Product\ShowArchive.cshtml" />
     <Content Include="Views\Shop\ShowBasket.cshtml" />
+    <Content Include="Views\Shop\Index.cshtml" />
+    <Content Include="Views\Shop\ShowOrder.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

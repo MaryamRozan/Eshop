@@ -26,7 +26,7 @@ namespace MyEshop.Controllers
         {
             List<DataLayer.ViewModels.ShopCartItem> list = new List<DataLayer.ViewModels.ShopCartItem>();
             var sessions = HttpContext.Current.Session;
-            if (sessions["shopcart"] != null) {
+            if (sessions["shopCart"] != null) {
                 list = (List<DataLayer.ViewModels.ShopCartItem>)sessions["shopcart"];
             }
             if (list.Any(l => l.ProductID == id))

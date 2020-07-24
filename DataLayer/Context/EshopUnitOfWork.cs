@@ -152,6 +152,26 @@ namespace DataLayer
             }
         }
 
+        IGenericRepository<Orders> _ordersRepository;
+        public IGenericRepository<Orders> OrdersRepository {
+            get {
+                if (_ordersRepository == null) {
+                    _ordersRepository = new GenericRepository<Orders>(db);
+                }
+                return _ordersRepository;
+            }
+        }
+
+        IGenericRepository<OrderDetails> _orderDetailsRepository;
+        public IGenericRepository<OrderDetails> OrderDetailsRepository
+        {
+            get {
+                if (_orderDetailsRepository == null) {
+                    _orderDetailsRepository = new GenericRepository<OrderDetails>(db);
+                }
+                return _orderDetailsRepository;
+            }
+        }
         public void Dispose()
         {
             db.Dispose();

@@ -25,6 +25,11 @@
         <EntityTypeShape EntityType="MyEshop_DBModel.Product_Comment" Width="2.625" PointX="3" PointY="15.5" />
         <AssociationConnector Association="MyEshop_DBModel.FK_Product_Comment_Product_Comment" />
         <AssociationConnector Association="MyEshop_DBModel.FK_Product_Comment_Products" />
+        <EntityTypeShape EntityType="MyEshop_DBModel.OrderDetails" Width="1.5" PointX="7.5" PointY="8" />
+        <EntityTypeShape EntityType="MyEshop_DBModel.Orders" Width="1.5" PointX="5.25" PointY="5.375" />
+        <AssociationConnector Association="MyEshop_DBModel.FK_OrderDetails_Orders" />
+        <AssociationConnector Association="MyEshop_DBModel.FK_OrderDetails_Products" />
+        <AssociationConnector Association="MyEshop_DBModel.FK_Orders_Users" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

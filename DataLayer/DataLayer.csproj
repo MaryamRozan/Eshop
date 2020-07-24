@@ -92,6 +92,14 @@
     </Compile>
     <Compile Include="MetaDataClasses\FeaturesMetaData.cs" />
     <Compile Include="MoreLinq\MoreEnumerable.DistinctBy.cs" />
+    <Compile Include="OrderDetails.cs">
+      <DependentUpon>EshopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MetaDataClasses\OrderDetailsMetaData.cs" />
+    <Compile Include="Orders.cs">
+      <DependentUpon>EshopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MetaDataClasses\OrdersMetaData.cs" />
     <Compile Include="Products.cs">
       <DependentUpon>EshopModel.tt</DependentUpon>
     </Compile>

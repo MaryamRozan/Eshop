@@ -13,26 +13,22 @@ namespace DataLayer
     using System;
     using System.Collections.Generic;
     
-    [MetadataType(typeof(UsersMetaData))]
-    public partial class Users
+    [MetadataType(typeof(OrdersMetaData))]
+    public partial class Orders
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Users()
+        public Orders()
         {
-            this.Orders = new HashSet<Orders>();
+            this.OrderDetails = new HashSet<OrderDetails>();
         }
     
+        public int OrderID { get; set; }
         public int UserID { get; set; }
-        public int RoleID { get; set; }
-        public string UserName { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
-        public string ActiveCode { get; set; }
-        public bool IsActive { get; set; }
-        public System.DateTime RegisterDate { get; set; }
+        public System.DateTime Date { get; set; }
+        public bool IsFinally { get; set; }
     
-        public virtual Roles Roles { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Orders> Orders { get; set; }
+        public virtual ICollection<OrderDetails> OrderDetails { get; set; }
+        public virtual Users Users { get; set; }
     }
 }
