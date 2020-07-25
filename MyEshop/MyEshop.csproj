@@ -111,6 +111,8 @@
     <Content Include="Areas\Admin\Content\css\bootstrap-rtl.css" />
     <Content Include="Areas\Admin\Content\css\bootstrap.css" />
     <Content Include="Areas\Admin\Content\css\bootstrap.min.css" />
+    <Content Include="Areas\Admin\Content\css\kendo.common.min.css" />
+    <Content Include="Areas\Admin\Content\css\kendo.default.min.css" />
     <Content Include="Areas\Admin\Content\css\plugins\dataTables\dataTables.bootstrap.css" />
     <Content Include="Areas\Admin\Content\css\plugins\morris\morris-0.4.3.min.css" />
     <Content Include="Areas\Admin\Content\css\plugins\social-buttons\social-buttons.css" />
@@ -126,6 +128,8 @@
     <Content Include="Areas\Admin\Content\js\demo\flot-demo.js" />
     <Content Include="Areas\Admin\Content\js\demo\morris-demo.js" />
     <Content Include="Areas\Admin\Content\js\jquery-1.10.2.js" />
+    <Content Include="Areas\Admin\Content\js\jquery-1.9.1.min.js" />
+    <Content Include="Areas\Admin\Content\js\Kendo-persian.js" />
     <Content Include="Areas\Admin\Content\js\plugins\dataTables\dataTables.bootstrap.js" />
     <Content Include="Areas\Admin\Content\js\plugins\dataTables\jquery.dataTables.js" />
     <Content Include="Areas\Admin\Content\js\plugins\flot\excanvas.min.js" />
@@ -1274,6 +1278,7 @@
     <Content Include="Content\img\img.jpg" />
     <Content Include="Content\img\logo.png" />
     <Content Include="Content\img\phone.png" />
+    <Content Include="Areas\Admin\Content\js\kendo.all.min.js" />
     <Content Include="Content\js\ShopCart.js" />
     <Content Include="Images\ProductImages\no-image.png" />
     <Content Include="Content\img\shop.png" />
@@ -1386,6 +1391,10 @@
     <Content Include="Areas\Admin\Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Areas\Admin\Views\Shared\_Defaultlayout.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Sliders\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Sliders\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Sliders\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Sliders\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -1414,6 +1423,7 @@
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
     <Compile Include="Areas\Admin\Controllers\Product_GroupsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SlidersController.cs" />
     <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
     <Compile Include="Areas\UserPanel\Controllers\AccountController.cs" />
     <Compile Include="Areas\UserPanel\UserPanelAreaRegistration.cs" />
@@ -1479,6 +1489,7 @@
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\UserPanel\Data\" />
     <Folder Include="Images\ProductImages\Thumb\" />
+    <Folder Include="Images\Sliders\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

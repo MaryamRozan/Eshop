@@ -37,5 +37,6 @@ namespace DataLayer
         public virtual DbSet<Product_Comment> Product_Comment { get; set; }
         public virtual DbSet<OrderDetails> OrderDetails { get; set; }
         public virtual DbSet<Orders> Orders { get; set; }
+        public virtual DbSet<Slider> Slider { get; set; }
     }
 }

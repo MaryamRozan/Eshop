@@ -1,12 +1,13 @@
-﻿
+﻿@model IEnumerable<DataLayer.Slider>
 
 <div class="slider-layer">
-<div id="slider-one" class="owl-carousel">
-    <div class="item">
-        <a href=""><img src="/Content/img/slider.jpg" title="تست عنوان"></a>
+    <div id="slider-one" class="owl-carousel">
+        @foreach (var item in Model)
+        {
+            <div class="item">
+                <a href="@item.Url"><img src="~/Images/Sliders/@item.Imagename" title="@item.Title"></a>
+            </div>
+
+        }
     </div>
-    <div class="item">
-        <a href=""><img src="/Content/img/slider.jpg" title="تست عنوان"></a>
-    </div>
-</div>
 </div>

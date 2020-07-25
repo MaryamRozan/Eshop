@@ -172,6 +172,17 @@ namespace DataLayer
                 return _orderDetailsRepository;
             }
         }
+
+        IGenericRepository<Slider> _sliderRepository;
+        public IGenericRepository<Slider> SliderRepository {
+            get {
+                if (_sliderRepository == null) {
+                    _sliderRepository = new GenericRepository<Slider>(db);
+                }
+                return _sliderRepository;
+            }
+        }
+        
         public void Dispose()
         {
             db.Dispose();

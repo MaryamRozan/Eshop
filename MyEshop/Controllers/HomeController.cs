@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,7 @@ namespace MyEshop.Controllers
 {
     public class HomeController : Controller
     {
+        EshopUnitOfWork db = new EshopUnitOfWork();
         // GET: Home
         public ActionResult Index()
         {
@@ -16,7 +18,8 @@ namespace MyEshop.Controllers
 
         public ActionResult Slider()
         {
-            return PartialView();
+            DateTime dt = new DateTime(DateTime.Now.Year,DateTime.Now.Month,DateTime.Now.Day);
+            return PartialView(db.SliderRepository.GetAll(s=>s.IsActive&& s.StartDate<=dt&& s.EndDate>=dt));
         }
 
         public ActionResult AboutUs()

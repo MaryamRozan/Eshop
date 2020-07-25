@@ -133,6 +133,10 @@
     <Compile Include="MetaDataClasses\SelectedProductGroupMetaData.cs" />
     <Compile Include="Services\GenericRepository.cs" />
     <Compile Include="Services\UserRepository.cs" />
+    <Compile Include="Slider.cs">
+      <DependentUpon>EshopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MetaDataClasses\SliderMetaData.cs" />
     <Compile Include="Tags.cs">
       <DependentUpon>EshopModel.tt</DependentUpon>
     </Compile>
