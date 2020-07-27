@@ -1279,6 +1279,7 @@
     <Content Include="Content\img\logo.png" />
     <Content Include="Content\img\phone.png" />
     <Content Include="Areas\Admin\Content\js\kendo.all.min.js" />
+    <Content Include="Content\js\Compare.js" />
     <Content Include="Content\js\ShopCart.js" />
     <Content Include="Images\ProductImages\no-image.png" />
     <Content Include="Content\img\shop.png" />
@@ -1428,6 +1429,7 @@
     <Compile Include="Areas\UserPanel\Controllers\AccountController.cs" />
     <Compile Include="Areas\UserPanel\UserPanelAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CompareController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageEmailController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -1477,6 +1479,8 @@
     <Content Include="Views\Shop\ShowBasket.cshtml" />
     <Content Include="Views\Shop\Index.cshtml" />
     <Content Include="Views\Shop\ShowOrder.cshtml" />
+    <Content Include="Views\Compare\CompareList.cshtml" />
+    <Content Include="Views\Compare\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
