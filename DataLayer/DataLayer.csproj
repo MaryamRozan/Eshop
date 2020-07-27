@@ -149,6 +149,11 @@
     <Compile Include="ViewModels\CompareViewModel.cs" />
     <Compile Include="ViewModels\ProductViewModel.cs" />
     <Compile Include="ViewModels\ShopCartViewModel.cs" />
+    <Compile Include="ViewModels\VisitViewModel.cs" />
+    <Compile Include="VisitSite.cs">
+      <DependentUpon>EshopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MetaDataClasses\VisitSiteMetaData.cs" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="EshopModel.edmx">

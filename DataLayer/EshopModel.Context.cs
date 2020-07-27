@@ -38,5 +38,6 @@ namespace DataLayer
         public virtual DbSet<OrderDetails> OrderDetails { get; set; }
         public virtual DbSet<Orders> Orders { get; set; }
         public virtual DbSet<Slider> Slider { get; set; }
+        public virtual DbSet<VisitSite> VisitSite { get; set; }
     }
 }

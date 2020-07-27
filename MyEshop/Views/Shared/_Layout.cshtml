@@ -72,7 +72,7 @@
             <ul>
                 <li><a href="/"> صفحه اصلی </a></li>
                 <li><a href="/Archive"> آرشیو محصولات </a></li>
-                <li><a href=""> منوی شماره یک </a></li>
+                <li><a href=""> پنل کاربری </a></li>
                 <li><a href=""> منوی شماره یک </a></li>
                 <li><a href=""> منوی شماره یک </a></li>
                 <li><a href=""> منوی شماره یک </a></li>
@@ -100,14 +100,34 @@
         <aside class="col-md-3 col-sm-4 right-side-content">
             <!-- Basket -->
             @RenderSection("Filter", false)
-            
+
+            @if(User.Identity.IsAuthenticated){
+            <section class="border-radius category-side">
+                <header>
+                    <h3>
+                        پنل کاربری
+                       
+                    </h3>
+                </header>
+                <article>
+                    <ul>
+                        <li><a href="/UserPanel/Account/ChangePassword"> تغییر کلمه عبور</a>
+                        <li>
+                            <a href="/Account/LoggOff"> خروج</a>
+                        </li>
+                    </ul>
+
+                </article>
+            </section>
+
+            }
             <div id="Basket">
-                @Html.Action("ShowBasket", "Shop")
+                @Html.Action("ShowBasket", "Shop", new { area = "" })
             </div>
             <!-- End Basket -->
             <!-- compare -->
             <div id="Compare">
-                @Html.Action("CompareList", "Compare")
+                @Html.Action("CompareList", "Compare", new { area = "" })
             </div>
             <!-- End compare -->
             <!-- Category -->

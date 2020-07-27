@@ -1,7 +1,25 @@
-﻿
+﻿@model DataLayer.ViewModels.VisitSiteViewModel
 @{
     ViewBag.Title = "پنل مدیریت فروشگاه";
 }
 
     <h2>پنل مدیریت فروشگاه</h2>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+           بازدید امروز
+        </dt>
+        <dd>
+            @Model.TodayVisit
+        </dd>
+        <dt>
+            بازدید دیروز
+        </dt>
+        <dd>@Model.YesterdayVisit</dd>
+        <dt>بازدید کل</dt>
+        <dd>@Model.SumVisit</dd>
+        <dt>افراد آنلاین</dt>
+        <dd>@Model.OnlineUser</dd>
+    </dl>
+</div>
 

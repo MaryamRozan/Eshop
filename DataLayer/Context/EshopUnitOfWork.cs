@@ -143,9 +143,12 @@ namespace DataLayer
         }
 
         IGenericRepository<Product_Comment> _commentRepository;
-        public IGenericRepository<Product_Comment> CommentRepository {
-            get {
-                if (_commentRepository == null) {
+        public IGenericRepository<Product_Comment> CommentRepository
+        {
+            get
+            {
+                if (_commentRepository == null)
+                {
                     _commentRepository = new GenericRepository<Product_Comment>(db);
                 }
                 return _commentRepository;
@@ -153,9 +156,12 @@ namespace DataLayer
         }
 
         IGenericRepository<Orders> _ordersRepository;
-        public IGenericRepository<Orders> OrdersRepository {
-            get {
-                if (_ordersRepository == null) {
+        public IGenericRepository<Orders> OrdersRepository
+        {
+            get
+            {
+                if (_ordersRepository == null)
+                {
                     _ordersRepository = new GenericRepository<Orders>(db);
                 }
                 return _ordersRepository;
@@ -165,8 +171,10 @@ namespace DataLayer
         IGenericRepository<OrderDetails> _orderDetailsRepository;
         public IGenericRepository<OrderDetails> OrderDetailsRepository
         {
-            get {
-                if (_orderDetailsRepository == null) {
+            get
+            {
+                if (_orderDetailsRepository == null)
+                {
                     _orderDetailsRepository = new GenericRepository<OrderDetails>(db);
                 }
                 return _orderDetailsRepository;
@@ -174,15 +182,30 @@ namespace DataLayer
         }
 
         IGenericRepository<Slider> _sliderRepository;
-        public IGenericRepository<Slider> SliderRepository {
-            get {
-                if (_sliderRepository == null) {
+        public IGenericRepository<Slider> SliderRepository
+        {
+            get
+            {
+                if (_sliderRepository == null)
+                {
                     _sliderRepository = new GenericRepository<Slider>(db);
                 }
                 return _sliderRepository;
             }
         }
-        
+
+        IGenericRepository<VisitSite> _visitSiteRepository;
+        public IGenericRepository<VisitSite> VisitSiteRepository
+        {
+            get
+            {
+                if (_visitSiteRepository == null)
+                {
+                    _visitSiteRepository = new GenericRepository<VisitSite>(db);
+                }
+                return _visitSiteRepository;
+            }
+        }
         public void Dispose()
         {
             db.Dispose();
